@@ -18,20 +18,20 @@ spec:
       ### Resource Request GPU
       nodeSelector:
         cloud.google.com/gke-accelerator: "nvidia-tesla-t4"
-      ###
+      ##
 
       # ### Best-effort Spot Pod
-      terminationGracePeriodSeconds: 25
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: cloud.google.com/gke-spot
-                operator: In
-                values:
-                - "true"
-      ###
+      # terminationGracePeriodSeconds: 25
+      # affinity:
+      #   nodeAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #       nodeSelectorTerms:
+      #       - matchExpressions:
+      #         - key: cloud.google.com/gke-spot
+      #           operator: In
+      #           values:
+      #           - "true"
+      # ###
       
       containers:
       - name: test-web

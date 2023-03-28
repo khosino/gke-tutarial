@@ -8,7 +8,6 @@ resource "google_container_cluster" "gkeap" {
   release_channel {
     channel = "REGULAR"
   }
-  min_master_version = "1.24.8-gke.2000"
 
   networking_mode = "VPC_NATIVE"
   ip_allocation_policy {

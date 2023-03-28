@@ -41,3 +41,9 @@ variable "gke_sa_name" {
     description = "The Repositry name"
     default = "gke-sa"
 }
+
+variable "source_repo_name" {
+    description = "Source Repo Name"
+    type        = string
+}
+
