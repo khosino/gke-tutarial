@@ -731,6 +731,40 @@ $ kubectl get svc
 
 ### Create by terraform 
 
+enable APIs
+```
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable iam.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable serviceusage.googleapis.com
+gcloud services enable container.googleapis.com
+gcloud services enable artifactregistry.googleapis.com
+gcloud services enable cloudbuild.googleapis.com
+```
+
+set environment variable from `.env`.
+```
+$cd raycluster-gkeap-demo
+$vi .env
+PROJECT_ID="{YOUR PROJECT ID}"
+REGION="asia-northeast1"
+ZONE="asia-northeast1-a"
+CLUSTER_NAME="ray-cluster-autopilot"
+REPOSITRY_NAME="ray-cluster-repo"
+```
+
+```
+$source .env
+```
+
+Create Google Cloud Storage Bucket
+
+```
+$gsutil mb -l $REGION gs://$PROJECT_ID-terraform-state
+```
+
+Apply terraform
+
 ```
 $cd terraform
 $terraform init
