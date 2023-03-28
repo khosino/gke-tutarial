@@ -728,6 +728,14 @@ Access to Service IP address.
 $ kubectl get svc
 ```
 
+### Create by terraform 
+
+```
+$cd terraform
+$terraform init
+$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME
+```
+
 ### Next...
 
 [Ray Cluster on GKE Autopilot](https://github.com/khosino/raycluster-gkeap-demo/tree/main/distrl)
