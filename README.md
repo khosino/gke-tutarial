@@ -29,6 +29,7 @@ This is a Tutorial of Google Kubernetes Engine
     - [Create Source Repositries](#create-source-repositries)
     - [Create Cloud Build Trigger](#create-cloud-build-trigger)
     - [Change & push to the repositry](#change--push-to-the-repositry)
+  - [Create by terraform](#create-by-terraform)
   - [Next...](#next)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -726,6 +727,52 @@ Access to Service IP address.
 
 ```
 $ kubectl get svc
+```
+
+### Create by terraform 
+
+enable APIs
+```
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable iam.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable serviceusage.googleapis.com
+gcloud services enable container.googleapis.com
+gcloud services enable artifactregistry.googleapis.com
+gcloud services enable cloudbuild.googleapis.com
+```
+
+set environment variable from `.env`.
+```
+$cd raycluster-gkeap-demo
+$vi .env
+PROJECT_ID="{YOUR PROJECT ID}"
+REGION="asia-northeast1"
+ZONE="asia-northeast1-a"
+CLUSTER_NAME="ray-cluster-autopilot"
+REPOSITRY_NAME="ray-cluster-repo"
+```
+
+```
+$source .env
+```
+
+Create Google Cloud Storage Bucket
+
+```
+$gsutil mb -l $REGION gs://$PROJECT_ID-terraform-state
+```
+
+Create Source Repositry in GCP console
+If it links to github or other repositry, need to create manually.
+
+
+Apply terraform
+
+```
+$cd terraform
+$terraform init
+$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME -var=source_repo_name=$SOURCE_REPO_NAME
 ```
 
 ### Next...
