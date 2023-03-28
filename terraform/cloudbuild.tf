@@ -8,5 +8,5 @@ resource "google_cloudbuild_trigger" "gke-trigger" {
   }
   
   included_files = ["docker/**"]
-  filename = "cloudbuild.yaml"
+  filename = "cloudbuild.yml"
 }
