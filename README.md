@@ -763,12 +763,16 @@ Create Google Cloud Storage Bucket
 $gsutil mb -l $REGION gs://$PROJECT_ID-terraform-state
 ```
 
+Create Source Repositry in GCP console
+If it links to github or other repositry, need to create manually.
+
+
 Apply terraform
 
 ```
 $cd terraform
 $terraform init
-$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME -var=source_repo_name=$SOURCE_REPO_NAME
+$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME
 ```
 
 ### Next...
