@@ -749,8 +749,9 @@ $vi .env
 PROJECT_ID="{YOUR PROJECT ID}"
 REGION="asia-northeast1"
 ZONE="asia-northeast1-a"
-CLUSTER_NAME="ray-cluster-autopilot"
-REPOSITRY_NAME="ray-cluster-repo"
+CLUSTER_NAME="test-cluster-autopilot"
+REPOSITRY_NAME="test-cluster-repo"
+SOURCE_REPO_NAME="{YOUR REPOSSITRY NAME}"
 ```
 
 ```
@@ -760,12 +761,11 @@ $source .env
 Create Google Cloud Storage Bucket
 
 ```
-$gsutil mb -l $REGION gs://$PROJECT_ID-terraform-state
+$gsutil mb -l $REGION gs://$PROJECT_ID-2-terraform-state
 ```
 
 Create Source Repositry in GCP console
 If it links to github or other repositry, need to create manually.
-
 
 Apply terraform
 
