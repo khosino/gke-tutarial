@@ -772,7 +772,7 @@ Apply terraform
 ```
 $cd terraform
 $terraform init
-$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME
+$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME -var=source_repo_name=$SOURCE_REPO_NAME
 ```
 
 ### Next...
