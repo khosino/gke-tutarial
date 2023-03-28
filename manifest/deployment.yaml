@@ -36,7 +36,8 @@ spec:
       containers:
       - name: test-web
         #image: asia-northeast1-docker.pkg.dev/gke-tutorial-hclsj/gke-tutorial-repo/test-web-image:latest
-        image: asia-northeast1-docker.pkg.dev/gke-tutorial-hclsj/gke-tutorial-repo/test-web-image:COMMIT_SHA
+        #image: asia-northeast1-docker.pkg.dev/gke-tutorial-hclsj/gke-tutorial-repo/test-web-image:COMMIT_SHA
+        image: asia-northeast1-docker.pkg.dev/gke-tutorial-hclsj/test-cluster-repo/test-web-image:COMMIT_SHA
 
         # ### Resource Request CPU
         # resources:
